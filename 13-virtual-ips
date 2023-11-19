@@ -1,0 +1,12 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:  # Physisches Ethernet-Interface
+      dhcp4: true  # Beispiel für DHCP-Konfiguration für eth0
+  vlans:
+    eth0.100:  # Virtuelles VLAN-Interface
+      id: 100  # VLAN-ID
+      link: eth0  # Physisches Interface, mit dem das VLAN verbunden ist
+      addresses:
+        - 192.168.1.100/24  # Beispiel für die IP-Adresse des VLANs
